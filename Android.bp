@@ -740,7 +740,7 @@ cc_prebuilt_library_shared {
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/lib3a.flash.so"],
-			shared_libs: ["libdl", "libc", ],
+			shared_libs: ["liblog", "libdl", "libc", ],
 		},
 	},
 	compile_multilib: "both",
@@ -7853,7 +7853,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libmnl.so"],
-			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["libcutils", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "32",
@@ -7888,23 +7888,6 @@ cc_prebuilt_library_shared {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libmp4enc_xa.ca7.so"],
 			shared_libs: ["libcutils", "liblog", "libvcodec_utility", "libvcodec_oal", "libc++", "libdl", "libc", "libm", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libpn553_fw",
-	owner: "realme",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib/libpn553_fw.so"],
-			shared_libs: [ ],
 		},
 	},
 	compile_multilib: "32",
@@ -9492,6 +9475,23 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/liboppo_blank_algo.so"],
 			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libpn553_fw",
+	owner: "realme",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libpn553_fw.so"],
+			shared_libs: [ ],
 		},
 	},
 	compile_multilib: "64",
